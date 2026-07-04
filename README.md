@@ -1,21 +1,21 @@
-# API de Votação (TechVotos) - DevOps
+# Voting API (TechVotos) - DevOps
 
-Este projeto foi desenvolvido como Projeto Integrador Final com o objetivo de empacotar, automatizar e monitorar uma API de votação em Python/Flask. Isolei a aplicação utilizando containers Docker e configurei a orquestração do ambiente multi-serviço (App, Prometheus e Grafana) via Docker Compose. 
+This project was developed as a Final Integrative Project with the goal of packaging, automating, and monitoring a Python/Flask voting API. I isolated the application using Docker containers and configured the orchestration of the multi-service environment (App, Prometheus, and Grafana) via Docker Compose. 
 
-Ele permite que o Prometheus realize coletas consecutivas a cada 5 segundos e o Grafana exiba painéis visuais para tomada de decisão.
+It enables Prometheus to perform consecutive data scrapes every 5 seconds and Grafana to display visual dashboards for decision-making.
 
-Um projeto integrador para testar os conhecimentos em Docker e conteinerização ministrado pelo Professor Eden Ricardo Dosciatti na matéria Automação de Software e Infraestrutura.
+An integrative project to test knowledge in Docker and containerization, taught by Professor Eden Ricardo Dosciatti in the Software Automation and Infrastructure course.
 
-## 🚀 Como Iniciar o Projeto (Passo a Passo)
+## How to Run the Project (Step-by-Step)
 
-Para rodar todo o ambiente na sua máquina sem precisar configurar o Python ou os bancos de dados manualmente, você só precisa ter o **Docker** e o **Docker Compose** instalados no seu sistema.
+To run the entire environment on your machine without having to manually configure Python or databases, you only need to have **Docker** and **Docker Compose** installed on your system.
 
-1. **Baixar o Projeto:** Abra o terminal na sua máquina, clone este repositório com o comando `git clone https://github.com/fernandobrocco/Introducao_ao_Docker.git` e entre na pasta usando `cd Introducao_ao_Docker`.
+1. **Download the Project:** Open the terminal on your machine, clone this repository using the command `git clone https://github.com/fernandobrocco/Introducao_ao_Docker.git` and navigate into the folder using `cd Introducao_ao_Docker`.
 
-2. **Subir a Infraestrutura:** Execute o comando `docker compose up -d` para baixar as imagens necessárias e iniciar todos os serviços de forma isolada em segundo plano.
+2. **Start the Infrastructure:** Run the command `docker compose up -d` to download the required images and start all services isolated in the background.
 
-3. **Votar na API:** Abra o seu navegador de internet e acesse `http://localhost:5000/`. A página inicial do sistema de votação estará online. Para computar votos e testar o funcionamento, você pode acessar diretamente os endereços `http://localhost:5000/votar/a` ou `http://localhost:5000/votar/b`.
+3. **Vote via the API:** Open your web browser and go to `http://localhost:5000/`. The voting system's homepage will be online. To cast votes and test how it works, you can directly access the addresses `http://localhost:5000/votar/a` or `http://localhost:5000/votar/b`.
 
-4. **Verificar as Métricas do Prometheus:** Para checar se o coletor de dados está funcionando e se comunicando com a aplicação, acesse `http://localhost:9090/targets`. Nas metricas coloque `app_votos_total` para ver a quantidade de votos entre A e B.
+4. **Check Prometheus Metrics:** To check if the data collector is working and communicating with the application, go to `http://localhost:9090/targets`. In the metrics section, enter `app_votos_total` to view the total number of votes between A and B.
 
-5. **Acessar o Painel Visual no Grafana:** Entre no endereço `http://localhost:3000/` usando as credenciais padrão do sistema (`admin` para usuário e senha) para acessar a interface visual onde é possível criar gráficos e acompanhar os votos em tempo real.
+5. **Access the Grafana Dashboard:** Go to `http://localhost:3000/` using the default credentials (`admin` for both username and password) to access the visual interface, where you can create graphs and track votes in real time.
